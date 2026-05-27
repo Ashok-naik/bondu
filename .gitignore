@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Sensitive files
+*.pem
+*.key

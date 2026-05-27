@@ -1,0 +1,294 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About &amp; Contact | BONDU</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#fed65b",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-container": "#848484",
+                    "tertiary": "#000000",
+                    "primary-container": "#1b1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "primary": "#000000",
+                    "outline": "#7e7576",
+                    "on-tertiary-fixed": "#211a17",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#8d817c",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#1b1b1b",
+                    "surface-container-low": "#f3f3f4",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#eedfda",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-tint": "#5e5e5e",
+                    "surface-dim": "#dadada",
+                    "on-secondary-container": "#745c00",
+                    "surface": "#f9f9f9",
+                    "on-surface-variant": "#4c4546",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#ffe088",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-background": "#1a1c1c",
+                    "secondary-fixed-dim": "#e9c349",
+                    "secondary": "#735c00",
+                    "inverse-primary": "#c6c6c6",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed-variant": "#574500",
+                    "tertiary-container": "#211a17",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed-dim": "#d2c4be",
+                    "on-tertiary-fixed-variant": "#4e4541",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-uppercase": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-uppercase": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface-container/60 border-b border-white/20 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20">
+    <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:scale-105 transition-transform duration-300 active:scale-95 text-primary dark:text-on-primary-fixed">
+            <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </a>
+    </div>
+    <a class="font-headline-md text-headline-md tracking-widest text-primary dark:text-on-primary-fixed uppercase" href="index.html">BONDU</a>
+    <div class="flex items-center gap-4">
+        <button class="hover:scale-105 transition-transform duration-300 active:scale-95 text-primary dark:text-on-primary-fixed">
+            <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+        </button>
+    </div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section: Our Heritage -->
+<section class="relative h-[707px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic high-fashion editorial shot featuring a sophisticated woman in a minimalist black silk gown, standing in a grand, sun-drenched European marble hallway. The lighting is soft and ethereal, casting long shadows that emphasize the high-contrast light mode aesthetic. The color palette is strictly monochrome with soft gold highlights from the afternoon sun. The mood is timeless, exclusive, and profoundly serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSI9VjuNEpEto0VOwleAQNWLdxqr_Xpy36cLT1C06t-HGYTcxfhAKJGXiXpClxLKzOTfXfOBNvsAeh1fm3kmsUXYwa51yUCwJONhTAUs_U8iInc23gxB_64Mg3ykg0VFPuiMDFcDD_nf3_ygPQsJpmENqL5guHAwCQG4bRBVWi5MKkgXS5mK9Yveh8Cw5Xay2sCf9PeJGpG1MsfIRtIesqjPBY8vXWXmnLPBRyG7in_XEQxyEK_HDst3tyoClfBVsQevba6Jstc68">
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="max-w-2xl glass-card p-12 reveal-up active" id="hero-text">
+<span class="font-label-uppercase text-label-uppercase text-secondary mb-4 block">Est. 1994</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-none">Our Heritage</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Three decades of weaving dreams into fabric. Bondu began as a small atelier in Milan, dedicated to the art of silent luxury.</p>
+</div>
+</div>
+</section>
+<!-- Elegant Story Section -->
+<section class="py-24 md:py-32 bg-white">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 reveal-up active">
+<h2 class="font-headline-lg text-headline-lg mb-8">The Bondu Philosophy</h2>
+<div class="space-y-6 font-body-md text-body-md text-on-surface-variant">
+<p class="">We believe that true luxury is felt, not just seen. Our garments are meticulously crafted using the finest natural fibers, sourced from heritage mills that share our commitment to sustainability and excellence.</p>
+<p class="">Every stitch tells a story of intention. We reject the fleeting nature of fast fashion in favor of silhouettes that transcend seasons and trends, becoming cherished staples in the modern wardrobe.</p>
+</div>
+<div class="mt-12">
+<a href="ShopCollections.html" class="bg-primary text-on-primary px-10 py-4 font-label-uppercase text-label-uppercase hover:scale-[1.02] transition-transform duration-300 inline-block">Explore Collection</a>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7 order-1 md:order-2 mb-12 md:mb-0 reveal-up active">
+<div class="relative aspect-[4/5] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An extreme close-up detail of high-quality cashmere fabric being hand-stitched by a master artisan in a bright, modern workshop. The lighting is bright and clinical yet warm, highlighting the intricate texture of the ivory-colored wool. The workspace is impeccably clean, following a minimalist and luxurious aesthetic. The focus is sharp on the needle and thread, conveying a sense of expert craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpa0LB4rEUAXB1qXVuUbKqC5uvlTJdcUzxXXTjRtWzb4Fej3dC-74Ak3_lq4RmcNEpxoWlFz1Uqfok00zvT0jcA0N25-WV-BaLDrq9J36Gh-OV1I4LM_uVicPUyLlqh0NHbjlCWYx2jruOBGm_80U2Pdt65OAsXAvDjDizanwLNsMLlWhx4Q-nl9Lxu_m_E_dpDJP866C7gfZ0kWILM4iTbxKFds1PMK4TX-a8qgmnapDja0iYqAr2Zg-cmNUkF0mdlDJP0WgPhqY">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 md:py-32 bg-surface-container-low" id="contact">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center mb-16 reveal-up active">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Bondu Philosophy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Whether you seek a private styling session or have a query about our latest collection, our concierge is here to assist.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal-up active">
+<!-- Contact Form -->
+<div class="glass-card p-10 md:p-12">
+<form class="space-y-8">
+<div class="relative group">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant block mb-2">Full Name</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary focus:ring-0 focus:border-secondary transition-colors py-3 outline-none px-0" placeholder="Alexander Bondu" type="text">
+</div>
+<div class="relative group">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant block mb-2">Email Address</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary focus:ring-0 focus:border-secondary transition-colors py-3 outline-none px-0" placeholder="alex@bondu.com" type="email">
+</div>
+<div class="relative group">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant block mb-2">Your Message</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-primary focus:ring-0 focus:border-secondary transition-colors py-3 outline-none px-0 resize-none" placeholder="Tell us how we can help..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 font-label-uppercase text-label-uppercase hover:scale-[1.01] transition-transform duration-300" type="submit">Send Inquiry</button>
+</form>
+</div>
+<!-- Store Locations & Map Concept -->
+<div class="space-y-12">
+<div class="space-y-8">
+<div class="flex items-start gap-6 border-b border-outline-variant pb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<div>
+<h4 class="font-label-uppercase text-label-uppercase text-primary mb-2">Milan Flagship</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Via Montenapoleone, 27, 20121 Milano MI, Italy</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">+39 02 1234 5678</p>
+</div>
+</div>
+<div class="flex items-start gap-6 border-b border-outline-variant pb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<div>
+<h4 class="font-label-uppercase text-label-uppercase text-primary mb-2">London Boutique</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">15-16 New Bond St, London W1S 3AU, UK</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">+44 20 7890 1234</p>
+</div>
+</div>
+</div>
+<!-- Map Representation -->
+<div class="aspect-video relative overflow-hidden rounded-lg shadow-sm border border-white/40">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="An abstract, stylized overhead map of a high-end European shopping district, rendered in a minimalist light mode aesthetic. The map uses a palette of soft greys, whites, and subtle gold markers. The overall look is clean and sophisticated, avoiding cluttered detail for a luxury brand feel. The lighting is bright and even, reinforcing a premium digital interface style." data-location="Milan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUvqLAtTCEXAl0ByOL-cJ4MNSlB3LavNUugvpVpRROggFNJ4PdWreSG4p2y83I5MVowcAPAsV5OcRNTXtVqVlqRc91DT_wFR0jbAkladTb7lflVE3LwRmegmX5vZu3Adq7NogElpRwDr9nqLYeiumybmsXkMIkATSCHq9hRAxGfaRRfyTejJ3WAT8gvJF5mo-BaBAHX-aBvPejX1NpGZ4T2UjOQnSr_eGAiCtf5UEtGbOmleCk1i9JMjGw4DHIw9iGYgGQ8BZgzwo">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary px-6 py-3 rounded-full flex items-center gap-2 shadow-lg scale-110">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-uppercase text-label-uppercase">View Store Map</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-10 right-10 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group" href="#">
+<span class="material-symbols-outlined text-[32px]" data-icon="chat">chat</span>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-label-uppercase text-label-uppercase whitespace-nowrap ml-0 group-hover:ml-3">Chat with Concierge</span>
+</a>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container w-full">
+<div class="flex flex-col items-center gap-gutter py-20 px-margin-mobile md:px-margin-desktop">
+<h3 class="font-headline-md text-headline-md text-on-primary tracking-widest">BONDU</h3>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-primary-container/70 font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary-container/70 font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-container/70 font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-on-primary-container/70 font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Contact Us</a>
+</div>
+<p class="text-on-primary-container/70 font-body-md text-body-md uppercase tracking-wider text-center">© 2024 BONDU BOUTIQUE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Form Submission micro-interaction
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'Inquiry Sent';
+                btn.classList.replace('bg-primary', 'bg-secondary');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.replace('bg-secondary', 'bg-primary');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+
+
+</body></html>

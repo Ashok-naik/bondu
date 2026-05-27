@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOURA | The Velvet Season</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fed65b",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-container": "#848484",
+                        "tertiary": "#000000",
+                        "primary-container": "#1b1b1b",
+                        "on-secondary-fixed": "#241a00",
+                        "primary": "#000000",
+                        "outline": "#7e7576",
+                        "on-tertiary-fixed": "#211a17",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#8d817c",
+                        "background": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-container-low": "#f3f3f4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#eedfda",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-tint": "#5e5e5e",
+                        "surface-dim": "#dadada",
+                        "on-secondary-container": "#745c00",
+                        "surface": "#f9f9f9",
+                        "on-surface-variant": "#4c4546",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-background": "#1a1c1c",
+                        "secondary-fixed-dim": "#e9c349",
+                        "secondary": "#735c00",
+                        "inverse-primary": "#c6c6c6",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary-container": "#211a17",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed-dim": "#d2c4be",
+                        "on-tertiary-fixed-variant": "#4e4541",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-uppercase": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-uppercase": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-secondary-fixed/30 selection:text-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/20 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+    <button aria-label="Menu" class="hover:scale-105 transition-transform duration-300 text-primary">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</div>
+<a href="index.html" class="font-headline-md text-headline-md tracking-widest text-primary cursor-pointer">VELOURA</a>
+<div class="flex items-center gap-6">
+    <a href="ShopCollections.html" class="hidden md:block hover:scale-105 transition-transform duration-300 text-on-surface-variant font-label-uppercase text-label-uppercase">Collections</a>
+    <button aria-label="Cart" class="hover:scale-105 transition-transform duration-300 text-primary">
+        <span class="material-symbols-outlined">shopping_bag</span>
+    </button>
+</div>
+</div>
+</nav>
+<main class="pt-0 overflow-x-hidden">
+<!-- 1. Luxury Hero Banner -->
+<section class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Velvet Season Collection" class="w-full h-full object-cover scale-105 animate-[zoom_20s_infinite_alternate]" data-alt="A high-fashion editorial photograph of a model draped in a rich, dark velvet evening gown, standing against a minimalist architectural background with soft shadows. The lighting is high-end and cinematic, accentuating the texture of the velvet. The overall aesthetic is one of understated opulence, featuring a sophisticated palette of deep charcoal, ivory, and subtle gold tones in a bright, modern light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARyCScXj0TGy3UDYAHXoE_HDhcX8VHQ2rdT3qAA_znhh9WnmeRsovU09MyT3s09_bayWrfgA3XA8qZIGc8XaXebrxwpZ2lEg9hAOgQvywExlyaLLqNCdRFneZGmzFSCWr9Gi5n34PLg4hmrR-l1fyUUPsnL_AieHM3UNpEcOfzjEqEnAoKow6Le_rcn2-OaCoj817eReDAU6188QA42kKUVBw4ecDdp2DaMxZp9nwn4QIWBPlcqVlXCx16wWn64YT7-aXaHwO77oY"/>
+</div>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-margin-mobile">
+<span class="font-label-uppercase text-label-uppercase text-white tracking-[0.4em] mb-6 animate-pulse">AUTUMN WINTER 2024</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-10">The Velvet Season</h2>
+<a href="ShopCollections.html" class="bg-primary text-on-primary px-12 py-5 font-label-uppercase text-label-uppercase hover:scale-105 transition-transform duration-300 inline-block">
+    Shop Now
+</a>
+</div>
+</section>
+<!-- 2. Trending Collections -->
+<section class="py-20 md:py-32 bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-end justify-between mb-12">
+<h3 class="font-headline-lg text-headline-lg text-on-background">Trending</h3>
+<a class="font-label-uppercase text-label-uppercase border-b border-primary pb-1" href="ShopCollections.html">View All</a>
+</div>
+<div class="flex gap-gutter overflow-x-auto no-scrollbar pb-10 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Silk Dresses -->
+<div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Silk Dresses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A luxurious fashion category image showing a flowing champagne-colored silk dress suspended in a minimalist, sun-drenched studio. The lighting is soft and ethereal, highlighting the liquid-like quality of the silk. The room is decorated in a minimalist-luxury style with neutral tones and plenty of white space, evoking a sense of calm and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoXhmeEOsuNuVPYB_IPPGVKL-Ed_H5MiznHonMUamdy7aArPJM3PGLB6ZU5CqWnBFCG9cULU-FQ74SIBRDvFYpIvWszr9fQDvkGLx3SHPxIV2xDUDBMg392SpSfraNWmHlix3XBN_NLMQwwHDzvXaVqbgkAr7_vBb_qcN_V4ElrKHYEQA96ZPO8BlP1ZNr5G2yuUg5e5HQuQhBCCWI26r0qOtaObIjmLhByhmaYKsVnGIhr-7Zlk1vmpjhfBDXhj4jQYkmLATIWgg"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Silk Dresses</h4>
+<p class="font-label-uppercase text-label-uppercase text-outline">Effortless Elegance</p>
+</div>
+<!-- Evening Wear -->
+<div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="Evening Wear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An elegant showcase of evening wear featuring a sophisticated black tailored suit with gold accents on a mannequin. The setting is a high-end boutique with glass and polished stone surfaces. Warm ambient shadows and subtle glassmorphic reflections create a sense of depth and curated craftsmanship, aligning with the Understated Opulence brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmVYuf4qL36rz0EU7Wmq3rWqFB8W1zd1SgpqUQ5N6SEFcauPEGOvnYSghxJdrWQY1tPxxEO3ctEmg7m6gqz_RJXeyYYg05-ZZ8-YWQmKCL1Q_F6XxGwz0AmOZKT8KJVNkfntqPSW9GWjnY-4144uwjiXqXxkrFOzFPoOyJxMoOoU1Dhoh2Plqb5BQ1SPwQ5Xkjb46YI0EFDYuPeXxit7LGAHk-2_x4BKRq4sm3M-QoEpTPCEGjvkaQoUmug3C7U4ZsA5KnLrW5RKU"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Evening Wear</h4>
+<p class="font-label-uppercase text-label-uppercase text-outline">Couture Nightfall</p>
+</div>
+<!-- New Tailoring -->
+<div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6">
+<img alt="New Tailoring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern high-fashion tailoring displayed through a minimalist arrangement of structured blazers in shades of ivory and soft gray. The composition is clean and editorial, using heavy whitespace and subtle drop shadows. The lighting is high-key and professional, focusing on the fine stitching and premium fabric of the garments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5iQBPV0i5RTwSrYBIugsH_x4SUs_DpYOSSf3LpLVsgGpKqhXOZ0nFfe5uuBxrOubPyWAh3CFpHvQgjrXoin9P9dSL5ltCjx3TsOuZdTTy_iFZ_QtD0eFlzAKeGZbLx2eC7O6bFAA1h_ofJtwywsg4VpVt4uxsST_y8u4Qt3Izr3mxZMqdO4ZWYomQpc1QkM7EDRSn1Y1ZPS8xc7jOh1mp3VQ0N_d5PyufUYmglTHyl1wZXF5_XgSCEk2PhdeQb5M50yKlDvkL5k"/>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">New Tailoring</h4>
+<p class="font-label-uppercase text-label-uppercase text-outline">Sharp &amp; Refined</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. New Arrivals Bento Grid -->
+<section class="py-20 md:py-32 bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<span class="font-label-uppercase text-label-uppercase text-secondary mb-4 block">FRESHLY CURATED</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background">New Arrivals</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Item 1: Large -->
+<div class="glass-card relative overflow-hidden group">
+<div class="aspect-square md:aspect-[4/5] overflow-hidden">
+<img alt="Aurelia Gown" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Full-body product shot of the Aurelia Gown, a flowing white silk dress with intricate lace details. The model is captured in motion, creating a dynamic and elegant feel. The environment is a pristine, white-walled gallery space with natural light pouring in from a side window, casting long, soft shadows. The mood is timeless and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8SPBctKzkVzP3WyeWxJNMa04I4cotc--HVESiDfXXsYNqrxg3FhP8foR3-5Ll6RbYXz9aFaFWrBHowClcEy2eC2ecmD9mAWQIaRGlddGiDoNaSUSOOe_OG6bkcH1HG13NzKnyYPG4gDm0LHLWpnD1Hk_UIa140moZaoZEssruDY0duY-cMoVEEtzOq37eA_vHRlFRO7xO7KisNvsgZhwKT9xD3VHYAcMLG__gYEj2RoF_FLNT5Crg7SfH4Xsy6QsRRShI5wvI2cU"/>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-8 flex justify-between items-end">
+<div>
+<h5 class="font-headline-md text-headline-md text-primary">Aurelia Gown</h5>
+<p class="font-label-uppercase text-label-uppercase text-outline-variant">$1,250</p>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 flex items-center justify-center rounded-full hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Grid for other items -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="glass-card overflow-hidden group">
+<div class="aspect-square overflow-hidden">
+<img alt="Satin Slip" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of a satin slip dress in a subtle champagne hue, showcasing the shimmering fabric and delicate straps. The lighting is focused and warm, highlighting the material's sheen. Set against a soft-focus background of a luxury boudoir, creating an intimate and premium visual experience with a minimalist-luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN0pcXy1FhtcJUCFYaEPcX87zRSu6ZICH_B5bfdqqgZg45JfZaSzO4kIbzhia3Ql2zAXI-0T-e9gIsEKubap5o5HU3mcVLTmujVSuLlnXPBr9w4k0srs3iOwNeDi3QCo3W_To1u_RvSoxsLmsYcxRKGOa6th99sMHdgGmAbcV6sZW4fpL_K52Pm9HBKsrvc3L94ApfEDXk8_crAQBGxXSrnXb9necUR-pmxAGgJRTE0G7Z2nPdZ9IgDkD4xAQVY8gbYb4frcrUwL8"/>
+</div>
+<div class="p-4">
+<h5 class="font-body-md text-body-md font-bold mb-1">Satin Slip</h5>
+<p class="font-label-uppercase text-label-uppercase text-outline">$450</p>
+</div>
+</div>
+<div class="glass-card overflow-hidden group">
+<div class="aspect-square overflow-hidden">
+<img alt="Velvet Blazer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A meticulously tailored velvet blazer in deep midnight blue, displayed against a textured grey stone wall. The high-contrast fashion editorial lighting emphasizes the rich texture of the velvet and the sharp lines of the lapel. The image is clean and focused, reflecting the curation and craftsmanship of Veloura Boutique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQgelxzQ0C-MNp59U_kpqA7JIiFy1-D5jhJEpx7DEWDHN06tvHeqOoSfTFRJErZnEP2aWV62D6f1v10OWeDZv0waFcHBmkF11v2MXklx-lTizOEWIJnNOQftsfJLFuomyYbhoA-B7uVxWdxl5wUJozsei30mKDisu62JDapqXV4AADqA80hWAH3yHqvZz9CGbRK6bKdviwUm66t-0LrURtGX3kskW_qN1PDyYJOX_6zKqe0yRqU8ZWOEpqcU9B2cEspdqT-kPrC4"/>
+</div>
+<div class="p-4">
+<h5 class="font-body-md text-body-md font-bold mb-1">Velvet Blazer</h5>
+<p class="font-label-uppercase text-label-uppercase text-outline">$890</p>
+</div>
+</div>
+<div class="col-span-2 glass-card overflow-hidden group relative">
+<div class="aspect-[2/1] overflow-hidden">
+<img alt="Luxe Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An artistic arrangement of high-end accessories including a gold-chained leather handbag and minimalist jewelry on a white marble plinth. The composition uses asymmetric layout and heavy whitespace. The lighting is bright and modern, creating a clean light-mode aesthetic with soft, diffused shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0aW8GfH4m5bgi34jw12urmM_EvzD1q8r7BDfWyov1IvCRYGwRhwrlJPsZazpZben1FZay4v-pOpiuuuAXk-fpUB-mvgMU61sBDGRxvAWG1dqvqmi_VA_M0IubVcUra4yH_0aXLjghXwN1KezxChlOoRxqYlECcObiIiuDEi7LtoaqvGdxE1Gd9UMABAkqvL2FyLJvWQwA8N83dq0b9nsXSzW04taDL8F57qxNRMI4Rm4x2KamzFPC7ZUjGLg25HmXPAtz03m9DOA"/>
+</div>
+<div class="absolute inset-0 flex flex-col justify-center p-12 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<h5 class="font-headline-md text-headline-md mb-2">Essential Luster</h5>
+<p class="font-body-md text-body-md mb-6">Explore our curated accessory collection.</p>
+<button class="w-fit font-label-uppercase text-label-uppercase border-b border-primary">Discover More</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Customer Reviews -->
+<section class="py-20 md:py-32 bg-background border-y border-white/20 overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="relative max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8">format_quote</span>
+<div class="relative overflow-hidden h-[200px]" id="testimonial-container">
+<div class="testimonial-slide active transition-all duration-500 absolute w-full">
+<p class="font-headline-md text-headline-md italic mb-8">"The curation at Veloura is unmatched. Every piece I've purchased feels like a timeless investment in my wardrobe."</p>
+<cite class="font-label-uppercase text-label-uppercase block not-italic">— Eleanor R., London</cite>
+</div>
+</div>
+<div class="flex justify-center gap-4 mt-12">
+<button class="w-10 h-10 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-10 h-10 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Instagram Gallery -->
+<section class="py-20 md:py-32">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center justify-center gap-4 mb-16">
+<div class="h-px bg-outline-variant flex-grow"></div>
+<h3 class="font-label-uppercase text-label-uppercase text-outline tracking-[0.5em]">@VELOURA_BOUTIQUE</h3>
+<div class="h-px bg-outline-variant flex-grow"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 md:gap-4">
+<div class="aspect-square overflow-hidden group relative">
+<img alt="Insta 1" class="w-full h-full object-cover" data-alt="A vibrant yet minimal Instagram-style shot of a fashion model in a bright yellow outfit against a soft blue sky. The lighting is sunny and optimistic, fitting a high-end luxury brand's digital presence. The style is clean, modern, and high-fashion, with a focus on color and composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHZYqYjwERO_iszBOeai60AO5uBDDMYXgIchE7-X_fLvzYXCMb4OvsbTnmz0-UASynsC7qG_jVCH9LYh3PXBqHnxZep-rB5f-9gbOynnXPMqRg_rvFvKFID9yV7K4CRvKhL1lIp1RDdhXxlcBmnkI-AvcjISrNI7mjKy7epAPcP93bcPHz20hLU40Y0nSCiQEtVW9F1p2DfaFTtPEhhsVywtbYku7Oyj3DqkPwgFznjTSMWvfTC-zS6HusEY7KzRTdipsGlT5pH6s"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="aspect-square overflow-hidden group relative">
+<img alt="Insta 2" class="w-full h-full object-cover" data-alt="An aesthetic close-up of folded luxury fabrics in neutral tones of beige, cream, and taupe. The texture is palpable under soft, natural lighting. This digital sophisticated image highlights craftsmanship and exclusivity, fitting into the minimalist-luxury aesthetic of Veloura." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMNRSN8Ynt1omKvp3Lh18cgBXptbHTFbrAZAftjinZhy1HvOYntl0F6mgqbL2yPm19wez05w0Ak4c1Aur2l4DYdro0EsaV1T6lfusAdG9VN9AyxfsIblLP84O5oUANF7NeosM116ruqplp3YOwE8Md83hdqXKn-H3QKcIK6OPlz73iJTuQaMVKHnTzuSJ-7Vw7g_wL-SRv8z8jNhO60WCEZ3v1i5hm24GW7dZEOUDEJjIGxjGCB23O4_5Mbzidp5w_mBa22Z-PgXw"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="aspect-square overflow-hidden group relative">
+<img alt="Insta 3" class="w-full h-full object-cover" data-alt="A chic lifestyle shot of a designer handbag and a coffee cup on a minimalist glass table. Subtle reflections and glassmorphism elements are visible. The scene is illuminated by soft morning light, creating a calm and premium atmosphere that resonates with a discerning audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAatS1z27KTi_LEl3ptEvhqmmyApU443DZhJzgn4z1ayUKgvXAk-LvwjwVbEl_hNinbumUh7Vkdp9cGsMYX__4KSRrSKCdWMx5AC1lnIfOxWfEK_FGuKqkBOH0F0NzUa2q4jgZGZLKhK1AHS2iSDgE_ZCnuKNfKKoZ_BHM1GwpwgOruzWo4I17u-zeiDIrOCxX-eRbGoANo4i6gnOiU12GYieJ2wbrH65oLDMgqcfw7qZzQ3lB8WqQwC30V3Ctn7-B_F9_UeHKN6AQ"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Newsletter -->
+<section class="py-32 bg-primary-container text-on-primary">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h3 class="font-headline-lg text-headline-lg mb-6">Stay in Vogue</h3>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-12 max-w-lg mx-auto">Subscribe to receive exclusive access to new collections and boutique events.</p>
+<form class="max-w-md mx-auto relative">
+<input class="w-full bg-transparent border-b border-white py-4 font-label-uppercase text-label-uppercase text-on-primary focus:outline-none focus:border-secondary transition-colors placeholder:text-on-primary-container/50" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="absolute right-0 bottom-4 font-label-uppercase text-label-uppercase hover:text-secondary transition-colors" type="submit">Join</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary py-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-gutter text-center">
+<h2 class="font-headline-md text-headline-md text-on-primary tracking-widest mb-4">VELOURA</h2>
+<nav class="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-8">
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Contact Us</a>
+</nav>
+<p class="font-body-md text-body-md text-on-primary-container/50">© 2024 VELOURA BOUTIQUE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-t border-white/20 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 pb-safe">
+<a class="flex flex-col items-center justify-center text-primary border-t-2 border-secondary font-label-uppercase text-label-uppercase h-full w-full" href="index.html">
+    <span class="material-symbols-outlined">home</span>
+    <span class="mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline font-label-uppercase text-label-uppercase h-full w-full hover:text-secondary transition-colors" href="ShopCollections.html">
+    <span class="material-symbols-outlined">storefront</span>
+    <span class="mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline font-label-uppercase text-label-uppercase h-full w-full hover:text-secondary transition-colors" href="#">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="mt-1">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline font-label-uppercase text-label-uppercase h-full w-full hover:text-secondary transition-colors" href="#">
+    <span class="material-symbols-outlined">person</span>
+    <span class="mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => el.classList.add('scale-95'));
+            el.addEventListener('mouseup', () => el.classList.remove('scale-95'));
+            el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            const heroImg = document.querySelector('.animate-\\[zoom_20s_infinite_alternate\\]');
+            if(heroImg) {
+                heroImg.style.transform = `translateY(${scroll * 0.4}px) scale(1.05)`;
+            }
+        });
+    </script>
+</body></html>

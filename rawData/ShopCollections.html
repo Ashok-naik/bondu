@@ -1,0 +1,315 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bondu Fashions | Collections</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#fed65b",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-container": "#848484",
+                    "tertiary": "#000000",
+                    "primary-container": "#1b1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "primary": "#000000",
+                    "outline": "#7e7576",
+                    "on-tertiary-fixed": "#211a17",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#8d817c",
+                    "background": "#f9f9f9",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#1b1b1b",
+                    "surface-container-low": "#f3f3f4",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#eedfda",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed-variant": "#474747",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-tint": "#5e5e5e",
+                    "surface-dim": "#dadada",
+                    "on-secondary-container": "#745c00",
+                    "surface": "#f9f9f9",
+                    "on-surface-variant": "#4c4546",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#ffe088",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-background": "#1a1c1c",
+                    "secondary-fixed-dim": "#e9c349",
+                    "secondary": "#735c00",
+                    "inverse-primary": "#c6c6c6",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed-variant": "#574500",
+                    "tertiary-container": "#211a17",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed-dim": "#d2c4be",
+                    "on-tertiary-fixed-variant": "#4e4541",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-uppercase": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-uppercase": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 10px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .reveal-up {
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes revealUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-white/20 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300">
+    <div class="flex items-center gap-4">
+        <a href="index.html" class="text-primary hover:scale-105 transition-transform duration-300 active:scale-95">
+            <span class="material-symbols-outlined">menu</span>
+        </a>
+    </div>
+    <a href="index.html" class="font-headline-md text-headline-md tracking-widest text-primary">Bondu Fashions</a>
+    <div class="flex items-center gap-6">
+        <div class="hidden md:flex gap-8">
+            <a class="font-label-uppercase text-label-uppercase text-primary border-b border-primary" href="ShopCollections.html">Collections</a>
+            <a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors" href="CartTradition.html">Bespoke</a>
+        </div>
+        <button class="text-primary hover:scale-105 transition-transform duration-300 active:scale-95">
+            <span class="material-symbols-outlined">shopping_bag</span>
+        </button>
+    </div>
+</header>
+<main class="pt-32 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-16 reveal-up active" style="animation-delay: 0.1s;">
+<p class="font-label-uppercase text-label-uppercase text-secondary mb-4">New Dresses</p>
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg max-w-2xl">The Silk &amp; Velvet Series</h1>
+</section>
+<!-- Category & Filter Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 reveal-up active" style="animation-delay: 0.2s;">
+<!-- Category Chips -->
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-2 md:pb-0">
+<button class="px-6 py-2 bg-primary text-on-primary font-label-uppercase text-label-uppercase transition-all hover:scale-105">All</button>
+<button class="px-6 py-2 border border-outline/30 font-label-uppercase text-label-uppercase hover:border-primary transition-all">Dresses</button>
+<button class="px-6 py-2 border border-outline/30 font-label-uppercase text-label-uppercase hover:border-primary transition-all">Silk</button>
+<button class="px-6 py-2 border border-outline/30 font-label-uppercase text-label-uppercase hover:border-primary transition-all">Evening</button>
+</div>
+<!-- Filter/Sort -->
+<div class="flex items-center gap-8 border-b border-primary/10 py-2">
+<button class="flex items-center gap-2 font-label-uppercase text-label-uppercase group">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="group-hover:underline underline-offset-4">Filter</span>
+</button>
+<button class="flex items-center gap-2 font-label-uppercase text-label-uppercase group">
+<span class="material-symbols-outlined text-[20px]">swap_vert</span>
+<span class="group-hover:underline underline-offset-4">Sort</span>
+</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Product 1 -->
+<a href="midNight.html" class="group reveal-up active block" style="animation-delay: 0.3s;">
+    <div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated woman wearing a Luna Silk Wrap dress in a minimalist, sun-drenched studio. The silk fabric glows under warm, diffused cinematic lighting, highlighting the liquid-like texture of the champagne-colored garment. The background is a clean architectural space with soft shadows, embodying an understated opulent aesthetic with a high-end fashion editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUPXAlrwt5-J0NNPpjNJeRJY6Ii8IOaf9-UuPT5cVXFgGmKlBKODO2Rl-UTrpabvcyPpPVpURRpCMEZ_HyPq2SI2k6tIiQSZ0QfmK6gvo5yFMSuny-rBTsZ1dXt3P_QNaO_ZY3fu9jceEl-Do_V_KLElyE0XkK-908fuLOB3bQ0WS62x-lwkNLPLdqWreJLPoFH7vqawvBWWGkA6ywvd_PVA2jhwnkrK3RTYYEt7XMraVO6ogTghjim62PKs_m2htusbKxzyxWZ7o">
+        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-8 py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+            <span class="font-label-uppercase text-label-uppercase text-primary">Quick View</span>
+        </button>
+    </div>
+    <div class="flex justify-between items-start mb-2">
+        <div>
+            <h3 class="font-headline-md text-headline-md text-xl">Luna Silk Wrap</h3>
+            <div class="flex items-center gap-1 mt-1 text-secondary">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="font-label-uppercase text-[10px]">4.9</span>
+            </div>
+        </div>
+        <p class="font-label-uppercase text-label-uppercase">$420</p>
+    </div>
+</a>
+<!-- Product 2 -->
+<a href="midNight.html" class="group reveal-up active block" style="animation-delay: 0.4s;">
+    <div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious midnight blue velvet gown draped over a sculptural minimalist mannequin in a dark, atmospheric gallery. The velvet absorbs the low-key lighting, creating deep, rich shadows and soft highlights that emphasize the fabric's heavy, premium quality. The mood is mysterious and exclusive, utilizing a palette of deep blacks and royal blues in a modern digital boutique style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmgWXJcu27cr2PD-8m-W9R5Amo-90dpfPVzm5F4TY88cxpwIBfK3s18wPN3dBeTjvgBFm2-cDdrwZJueqPof2_trjv4scTeIxrrk_29Xz5qvENuOzJsZ7gxId4o6j1NrxW0FkAE7AS4ZP3W4RvV_tLRLCGpGIR-QScMlTF2ga8p4hYyIoMZUISeYL1NXzYl-LmyyECQaAcJnpkDdebLCyq8vfGWjaCeLMbNbP6PfxxEdm4n3l-444DfXLLedihMQEfmcy3s6uMf-0">
+        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-8 py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+            <span class="font-label-uppercase text-label-uppercase text-primary">Quick View</span>
+        </button>
+    </div>
+    <div class="flex justify-between items-start mb-2">
+        <div>
+            <h3 class="font-headline-md text-headline-md text-xl">Midnight Velvet Gown</h3>
+            <div class="flex items-center gap-1 mt-1 text-secondary">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="font-label-uppercase text-[10px]">5.0</span>
+            </div>
+        </div>
+        <p class="font-label-uppercase text-label-uppercase">$580</p>
+    </div>
+</a>
+<!-- Product 3 -->
+<div class="group reveal-up active" style="animation-delay: 0.5s;">
+<div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist pearl-colored slip dress hanging against a white textured plaster wall. The lighting is high-key and soft, creating a serene, ethereal glow. The composition focuses on the simple elegance and delicate straps of the garment, embodying the brand's 'Understated Opulence' philosophy. The scene is bright and airy with subtle gold accents in the room's hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdv-A3lVqaqUqt_55mF4LwGHj56lGad8RbMD_-_C-sldlJri6z12ze2az5093cNHu9wTTXSV3WuaCKi1dxuswcPkpCj3VOqz8tvqtnKVCyIY8pRTZ_ANMzt_TOK1ld6CmiQ8psjMnkG0AoEpBQZ3CZS8ACMZdpIOJvlBfntq8lO9PAMxz4ug8XxKTOOkTZswSA9YAGU1MxIaCqV9RKrbJdIwpSdlKSfnoOVqL4WMARL0O3_ZEp2GPKTbS4PCVMQ4XTgbkxBIv6hhY">
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-8 py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-label-uppercase text-label-uppercase text-primary">Quick View</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-xl">Pearl Slip Dress</h3>
+<div class="flex items-center gap-1 mt-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-uppercase text-[10px]">4.8</span>
+</div>
+</div>
+<p class="font-label-uppercase text-label-uppercase">$350</p>
+</div>
+</div>
+<!-- Additional items to fill the grid -->
+<div class="group reveal-up active" style="animation-delay: 0.6s;">
+<div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-fashion shot of a structured black evening dress with asymmetric lines. The setting is a cold, modern concrete space with sharp shadows and bright directional light. The dress features subtle sheen and complex tailoring. The overall atmosphere is futuristic luxury, focusing on craftsmanship and structural form in a monochrome palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJIMys0y2j4dSi3tRYyAvnfZprmOg_ss4qzhVDlhjZOqFKz5QM-nfe5O78_GNZUe0NOPwHhXqL5ulb0AyLEgVHvW3zDOLJmhTyhouYdV2jqVe9LQAoeiWJui9qC0lzpYohpZAuZYaD1vL3x3_HjiN10dXL-YWparGDPzrtdzxQQuJRr73npQ8qptXzNGl3Ch-8KWBeqf9--3hZmdYZouhCbHejGVvRaoo8-fEA1ZQX8Xy9CW9n6k54UeumQ5q9sB38PmpL0p4pHgE">
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-8 py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-label-uppercase text-label-uppercase text-primary">Quick View</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-xl">Noir Sculpt Gown</h3>
+<div class="flex items-center gap-1 mt-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-uppercase text-[10px]">4.9</span>
+</div>
+</div>
+<p class="font-label-uppercase text-label-uppercase">$620</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-t border-white/20 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe">
+<a href="index.html" class="flex flex-col items-center justify-center text-outline transition-colors hover:text-secondary">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-uppercase text-[10px] mt-1">Home</span>
+</a>
+<a href="ShopCollections.html" class="flex flex-col items-center justify-center text-primary border-t-2 border-secondary h-full">
+    <span class="material-symbols-outlined">storefront</span>
+    <span class="font-label-uppercase text-[10px] mt-1">Shop</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-outline transition-colors hover:text-secondary">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="font-label-uppercase text-[10px] mt-1">Wishlist</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-outline transition-colors hover:text-secondary">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-uppercase text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+<!-- Footer (Visible on Desktop) -->
+<footer class="hidden md:flex flex-col items-center gap-gutter py-20 px-margin-desktop bg-primary-container text-on-primary w-full mt-20">
+<div class="font-headline-md text-headline-md text-on-primary">Bondu Fashions</div>
+<div class="flex gap-12">
+<a class="font-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-on-primary-container/50 text-[12px] tracking-wider mt-8">© 2024 BONDU FASHIONS BOUTIQUE. ALL RIGHTS RESERVED.</div>
+</footer>
+<script>
+        // Micro-interactions and reveal observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Glassmorphic header effect on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+        });
+    </script>
+
+
+</body></html>
